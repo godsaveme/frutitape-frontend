@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="7dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgProductImage"
+            android:layout_width="101dp"
+            android:layout_height="92dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/card4" />
+
+        <TextView
+            android:id="@+id/tvwProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="Sandia"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/imgProductImage"
+            app:layout_constraintTop_toTopOf="@+id/imgProductImage" />
+
+        <TextView
+            android:id="@+id/tvwProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="S/17.00"
+            app:layout_constraintStart_toStartOf="@+id/tvwProductName"
+            app:layout_constraintTop_toBottomOf="@+id/tvwProductName" />
+
+        <TextView
+            android:id="@+id/tvwProductUnity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Caja"
+            app:layout_constraintStart_toEndOf="@+id/tvwProductPrice"
+            app:layout_constraintTop_toTopOf="@+id/tvwProductPrice" />
+
+        <TextView
+            android:id="@+id/tvwProductProductor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Don Pepe"
+            app:layout_constraintBottom_toBottomOf="@+id/imgProductImage"
+            app:layout_constraintStart_toStartOf="@+id/tvwProductPrice"
+            app:layout_constraintTop_toBottomOf="@+id/tvwProductPrice" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvwProductStart"
+            app:layout_constraintEnd_toStartOf="@+id/tvwProductStart"
+            app:layout_constraintTop_toTopOf="@+id/tvwProductStart"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <TextView
+            android:id="@+id/tvwProductStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="3.8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
