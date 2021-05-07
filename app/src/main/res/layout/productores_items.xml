@@ -8,8 +8,18 @@
     <ImageView
         android:id="@+id/imgProductor"
         android:layout_width="94dp"
-        android:layout_height="130dp"
+        android:layout_height="94dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_fruits" />
+
+    <TextView
+        android:id="@+id/tvwProductorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="La fresca"
+        app:layout_constraintEnd_toEndOf="@id/imgProductor"
+        app:layout_constraintStart_toStartOf="@id/imgProductor"
+        app:layout_constraintTop_toBottomOf="@id/imgProductor" />
 </androidx.constraintlayout.widget.ConstraintLayout>

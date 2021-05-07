@@ -17,18 +17,17 @@ class ProductoresAdapter(val datos:List<Productores>): RecyclerView.Adapter<Prod
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
-        //val tvwNombre: TextView = itemView.findViewById(R.id.tvwNombre)
+        val tvwProductorName: TextView = itemView.findViewById(R.id.tvwProductorName)
 
         val img: ImageView = itemView.findViewById(R.id.imgProductor)
 
         fun Bind(productor: Productores){
-            //tvwNombre.text = productor.nombre
+            tvwProductorName.text = productor.nombre
             //Glide.with(itemView).load("http://goo.gl/gEgYUd").into(img);
-
-            /*img.setImageResource(productor.imageUrl)
+            img.setImageResource(productor.imageUrl)
             img.setOnClickListener(View.OnClickListener {
                 Toast.makeText(itemView.context,"Hola Mundo", Toast.LENGTH_LONG).show()
-            })*/
+            })
         }
 
     }
