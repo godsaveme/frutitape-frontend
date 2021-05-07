@@ -1,9 +1,11 @@
 package com.example.frutitape
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
+
+import android.widget.ImageView
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frutitape.adapter.MasVendidosAdapter
@@ -13,9 +15,7 @@ import com.example.frutitape.adapter.ProductosAdapter
 import com.example.frutitape.model.MasVendidos
 import com.example.frutitape.model.Productores
 import com.example.frutitape.model.Productos
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -24,6 +24,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
+
+
+
+        val imgShoppinCart:ImageView = findViewById(R.id.imgShoppingCart)
+        imgShoppinCart.setOnClickListener {
+            val intent = Intent(this, ShoppingCart::class.java)
+            //intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            }
+
+
 
         val recyclerMasVendidos: RecyclerView = findViewById(R.id.recycler_masvendidos)
 

@@ -12,6 +12,8 @@ class ShoppingCart : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shoppingcart)
 
+        supportActionBar?.hide()
+
         val rvwShoppingCart: RecyclerView = findViewById(R.id.rvwShoppingCart)
 
         val lista:List<ShoppingCart> = listOf(
