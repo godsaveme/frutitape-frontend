@@ -5,7 +5,9 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frutitape.adapter.MasVendidosAdapter
+import com.example.frutitape.adapter.ProductoresAdapter
 import com.example.frutitape.model.MasVendidos
+import com.example.frutitape.model.Productores
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +28,24 @@ class MainActivity : AppCompatActivity() {
 
         recyclerMasVendidos.apply {
             adapter=myAdapter
+            layoutManager= LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL,false)
+        }
+
+
+        val recyclerProductores: RecyclerView = findViewById(R.id.recycler_productores)
+
+        val listaProductores:List<Productores> = listOf(
+            Productores("",""),
+            Productores("",""),
+            Productores("",""),
+            Productores("",""),
+            Productores("",""),
+            Productores("","")
+        )
+        val myAdapterProductores:ProductoresAdapter=ProductoresAdapter(listaProductores)
+
+        recyclerProductores.apply {
+            adapter=myAdapterProductores
             layoutManager= LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL,false)
         }
     }
