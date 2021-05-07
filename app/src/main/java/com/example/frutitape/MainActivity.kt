@@ -2,12 +2,14 @@ package com.example.frutitape
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frutitape.adapter.MasVendidosAdapter
 import com.example.frutitape.adapter.ProductoresAdapter
 import com.example.frutitape.adapter.ProductosAdapter
+
 import com.example.frutitape.model.MasVendidos
 import com.example.frutitape.model.Productores
 import com.example.frutitape.model.Productos
@@ -59,26 +61,30 @@ class MainActivity : AppCompatActivity() {
 
         /*val api:APIService = getRetrofit().create(APIService::class.java)
 
-        api.getProducer().enqueue(object: Callback<List<Productores>> {
+        api.getProducer().enqueue(object:Callback<List<Productores>>{
             override fun onFailure(call: Call<List<Productores>>, t: Throwable) {
-                Toast.makeText(this@MainActivity,"Error", Toast.LENGTH_LONG).show()
+                Log.d("hola","hola")
+                Toast.makeText(this@MainActivity,"Error",Toast.LENGTH_LONG).show()
             }
 
-            override fun onResponse(call: Call<List<Productores>>, response: Response<Productores>) {
-                Enlazar(response.body)
+            override fun onResponse(call: Call<List<Productores>>,response: Response<List<Productores>>) {
+                Log.d("chau","chau")
+                Enlazar(response.body()!!)
+
+
             }
         })*/
 
         val recyclerProductos: RecyclerView = findViewById(R.id.recycler_productos)
 
         val listaProductos:List<Productos> = listOf(
-            Productos("Sandia","S/ 17.00",R.drawable.card1,"Kg","Don Pepe","3.9"),
-            Productos("Fresa","S/ 15.00",R.drawable.card3,"Caja","La Fresca","3.6"),
-            Productos("Kiwi","S/ 8.00",R.drawable.card2,"Jaba","Lucia Shop","4.2"),
-            Productos("Papaya","S/ 6.90",R.drawable.card4,"Canasta","4 Felices","3.0"),
-            Productos("Maracuya","S/ 5.40",R.drawable.card3,"Kg","Don Luchito","2.5"),
-            Productos("Manzana","S/ 7.50",R.drawable.card1,"Kg","El Chunga","5.0"),
-            Productos("Platano","S/ 2.80",R.drawable.card2,"Kg","La Master","4.7")
+            Productos("Sandia","S/ 17.00",R.drawable.b1,"Kg","Don Pepe","3.9"),
+            Productos("Fresa","S/ 15.00",R.drawable.b2,"Caja","La Fresca","3.6"),
+            Productos("Kiwi","S/ 8.00",R.drawable.b3,"Jaba","Lucia Shop","4.2"),
+            Productos("Papaya","S/ 6.90",R.drawable.b4,"Canasta","4 Felices","3.0"),
+            Productos("Maracuya","S/ 5.40",R.drawable.b1,"Kg","Don Luchito","2.5"),
+            Productos("Manzana","S/ 7.50",R.drawable.b2,"Kg","El Chunga","5.0"),
+            Productos("Platano","S/ 2.80",R.drawable.b3,"Kg","La Master","4.7")
         )
         val myAdapterProductos:ProductosAdapter=ProductosAdapter(listaProductos)
 
@@ -90,7 +96,7 @@ class MainActivity : AppCompatActivity() {
 
     fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://52.249.24.233:8085/v0/frutitape/producers")
+            .baseUrl("http://20.189.24.239:8085/v0/frutitape/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
